@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const jwt = require('jsonwebtoken');
-const jwtPass = "9959888391";
+const jwtPass = "123456";
 const mongoose = require('mongoose');
+require('dotenv').config();
 
+const dbURL = process.env.MONGO-DB-userAPP
 app.use(express.json());
-mongoose.connect('mongodb+srv://Wreck7:Anuram7@cluster0.zsutz.mongodb.net/userApp?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(dbURL);
 
 const user = mongoose.model('users', {
     username: String,

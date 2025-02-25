@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Wreck7:Anuram7@cluster0.zsutz.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0');
+require('dotenv').config();
+const dbURL = process.env.MONGO_DB_test;
+mongoose.connect(dbURL);
 
 const testUser = mongoose.model('testUser', {
     name: String,

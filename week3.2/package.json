@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.21.2",
+    "import": "^0.0.6",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
     "zod": "^3.24.2"

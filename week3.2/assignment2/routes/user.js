@@ -15,7 +15,7 @@ async function findUser(username) {
 }
 async function findCourse(courseId) {
     try {
-        const course = await User.findOne({ courseId });
+        const course = await Course.findOne({ courseId });
         return course ? true : false;
     } catch (err) {
         console.error('Error finding user:', err);

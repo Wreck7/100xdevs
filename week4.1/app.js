@@ -27,4 +27,13 @@ async function getValue2() {
     document.getElementById('result').innerText = data;
 }
 
+async function calculateInterest(){
+    const principal = document.getElementById('principal').value;
+    const rate = document.getElementById('rate').value;
+    const time = document.getElementById('time').value;
+    const response = await fetch(`http://localhost:3000/interest?principal=${principal}&rate=${rate}&time=${time}`);
+    const data = await response.json();
+    document.getElementById('interest').innerText = data.interest;
+    document.getElementById('total').innerText = data.total;
+}
 

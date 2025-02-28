@@ -7,11 +7,30 @@
 </head>
 <body>
     <div class="container">
+        <h2>Sum here!</h2>
     <input id="box1" type="text">
     <input id="box2" type="text">
     <button id="btn" onclick="getValue2()">calculate</button>
     <p id="result"></p>
     </div>
+    <br><br>
+    <div>
+        <h2>Calculate interest</h2>
+        <input type="number" id="principal" placeholder="principal">
+        <input type="number" id="rate" placeholder="rate">
+        <input type="number" id="time" placeholder="time">
+        <button id="btn2" onclick="calculateInterest()">calculate</button>
+        <p id="interest"></p>
+        <p id="total"></p>
+    </div>
+    <br><br>
+    <div class="container">
+        <h2>Sum debounced!</h2>
+    <input oninput="debounceDiv()" id="b1" type="text">
+    <input oninput="debounceDiv()" id="b2" type="text">
+    <p id="result1"></p>
+    </div>
     <script src="/app.js"></script>
+    <script src="/debounce.js"></script>
 </body>
 </html>

@@ -1,6 +1,11 @@
 const express = require('express')
-const mongoose = require('mongoose')
+const AdminRoute = require('./routes/admin');
+const UserRoute = require('./routes/user');
+const app = express();
+app.use(express.json());
 
-mongoose.connect('mongodb+srv://Wreck7:Anuram7@cluster0.zsutz.mongodb.net/retest')
-const Schema = mongoose.Schema;
-const Model = mongoose.model
+
+app.use('/admin', AdminRoute);
+app.use('/user', UserRoute);
+
+app.listen(7000);

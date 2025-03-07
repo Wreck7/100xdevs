@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 
 mongoose.connect('mongodb+srv://Wreck7:Anuram7@cluster0.zsutz.mongodb.net/retest')
 const Schema = mongoose.Schema;
-const Model = mongoose.model
 
 const AdminSchema = new Schema({
     username: String,
@@ -22,9 +21,9 @@ const CourseSchema = new Schema({
     price: Number
 })
 
-const Admin = Model('Admin', AdminSchema)
-const User = Model('User', UserSchema)
-const Course = Model('Course', CourseSchema)
+const Admin = mongoose.model('Admin', AdminSchema)
+const User = mongoose.model('User', UserSchema)
+const Course = mongoose.model('Course', CourseSchema)
 
 module.exports = {
     Admin,

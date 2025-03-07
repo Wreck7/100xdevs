@@ -1,5 +1,5 @@
 const { User } = require('../db/index')
-function adminMiddleware(req, res, next) {
+function userMiddleware(req, res, next) {
     const {username, password} = req.headers
     const check = User.findOne({username: username})
     check.then(function(val) {
@@ -11,4 +11,4 @@ function adminMiddleware(req, res, next) {
     })
 }
 
-module.exports =  adminMiddleware
+module.exports =  userMiddleware

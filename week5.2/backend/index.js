@@ -1,10 +1,11 @@
 const express = require('express');
-const app = express();
 import { addTodo, updateTodo } from './types';
+import { Todo } from './db';
 
+const app = express();
 app.use(express.json());
 
-app.post('/todo', function (req, res) {
+app.post('/todo', async function (req, res) {
     const addTodoBody = req.body
     const parseBody = addTodo.safeParse(addTodoBody)
     if(!parseBody.success){
@@ -13,12 +14,23 @@ app.post('/todo', function (req, res) {
         })
     }else{
         //put in mongoDB
+        await Todo.create({
+            title: addTodoBody.title,
+            description: addTodoBody.description,
+            completed: false
+        })
+        res.json({
+            message: 'Todo added successfully'
+        })
     }
 })
-app.get('/todos', function (req, res) {
-    
+app.get('/todos', async function (req, res) {
+    const response = await Todo.find();
+    res.json({
+        response
+    })
 })
-app.put('/completed', function (req, res) {
+app.put('/completed', async function (req, res) {
     const updateTodoBody = req.body
     const parseBody = updateTodo.safeParse(updateTodoBody)
     if(!parseBody.success){
@@ -27,6 +39,14 @@ app.put('/completed', function (req, res) {
         })
     }else{
         //put in mongoDB
+        await Todo.updateOne({
+            _id: req.body.id,
+        }, {
+            completed: true
+        })
+        res.json({
+            message: 'Todo marked as done!'
+        })
     }
 
 })

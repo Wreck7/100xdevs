@@ -4,11 +4,11 @@ const addTodo = z.object({
     title: z.string(),
     description: z.string()
 })
-const completeTodo = z.object({
+const updateTodo = z.object({
     id: z.string()
 })
 
 module.exports = {
     addTodo,
-    completeTodo
+    updateTodo
 }

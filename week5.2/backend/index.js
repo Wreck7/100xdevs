@@ -1,26 +1,33 @@
 const express = require('express');
 const app = express();
-import { addTodo, completeTodo } from './types';
+import { addTodo, updateTodo } from './types';
 
 app.use(express.json());
 
-const validate = (schema) => (req, res, next) => {
-    try {
-        schema.parse(req.body);
-        next();
-    } catch (e) {
-        res.status(400).json(e.errors);
+app.post('/todo', function (req, res) {
+    const addTodoBody = req.body
+    const parseBody = addTodo.safeParse(addTodoBody)
+    if(!parseBody.success){
+        res.status(411).json({
+            message: 'You sent the wrong inputs'
+        })
+    }else{
+        //put in mongoDB
     }
-};
-
-
-app.post('/todo', validate(addTodo), function (req, res) {
-
 })
 app.get('/todos', function (req, res) {
-
+    
 })
-app.put('/completed', validate(completeTodo), function (req, res) {
+app.put('/completed', function (req, res) {
+    const updateTodoBody = req.body
+    const parseBody = updateTodo.safeParse(updateTodoBody)
+    if(!parseBody.success){
+        res.status(411).json({
+            message: 'You sent the wrong inputs'
+        })
+    }else{
+        //put in mongoDB
+    }
 
 })
 

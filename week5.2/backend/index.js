@@ -1,10 +1,12 @@
 const express = require('express');
 const { addTodo, updateTodo } = require('./types')
+const cors = require('cors')
 const { Todo } = require('./db')
 // import { addTodo, updateTodo } from './types';
 // import { Todo } from './db';
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.post('/todo', async function (req, res) {

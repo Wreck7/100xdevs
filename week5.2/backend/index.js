@@ -1,6 +1,8 @@
 const express = require('express');
-import { addTodo, updateTodo } from './types';
-import { Todo } from './db';
+const { addTodo, updateTodo } = require('./types')
+const { Todo } = require('./db')
+// import { addTodo, updateTodo } from './types';
+// import { Todo } from './db';
 
 const app = express();
 app.use(express.json());
@@ -8,11 +10,11 @@ app.use(express.json());
 app.post('/todo', async function (req, res) {
     const addTodoBody = req.body
     const parseBody = addTodo.safeParse(addTodoBody)
-    if(!parseBody.success){
+    if (!parseBody.success) {
         res.status(411).json({
             message: 'You sent the wrong inputs'
         })
-    }else{
+    } else {
         //put in mongoDB
         await Todo.create({
             title: addTodoBody.title,
@@ -33,11 +35,11 @@ app.get('/todos', async function (req, res) {
 app.put('/completed', async function (req, res) {
     const updateTodoBody = req.body
     const parseBody = updateTodo.safeParse(updateTodoBody)
-    if(!parseBody.success){
+    if (!parseBody.success) {
         res.status(411).json({
             message: 'You sent the wrong inputs'
         })
-    }else{
+    } else {
         //put in mongoDB
         await Todo.updateOne({
             _id: req.body.id,

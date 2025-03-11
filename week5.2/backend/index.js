@@ -29,9 +29,9 @@ app.post('/todo', async function (req, res) {
     }
 })
 app.get('/todos', async function (req, res) {
-    const response = await Todo.find();
+    const todos = await Todo.find();
     res.json({
-        response
+        todos
     })
 })
 app.put('/completed', async function (req, res) {

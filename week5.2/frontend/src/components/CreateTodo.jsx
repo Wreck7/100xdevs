@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const CreateTodo = () => {
+const CreateTodo = ({setTodos, todos}) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     function handlePostTodo() {
@@ -17,7 +17,9 @@ const CreateTodo = () => {
                 }
             })
             const json = await response.json()
+            
             alert('Todo added successfully!')
+            setTodos([...todos, {title, description}])
         }
         fetchAddTodo()
     }

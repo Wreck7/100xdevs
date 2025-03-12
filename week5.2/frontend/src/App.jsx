@@ -13,11 +13,11 @@ function App() {
     }
     fetchTodos();
     // console.log(todos);
-  }, [])
+  })
   
   return (
     <div>
-      <CreateTodo />
+      <CreateTodo setTodos={setTodos} todos={todos}/>
       <Todos todos={todos}/>
     </div>
   )

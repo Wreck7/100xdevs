@@ -1,0 +1,59 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 17px;
+  width: 300px;
+  height: 350px;
+  border: 2px rgba(181, 176, 176, 0.543) solid;
+  color: rgb(67, 66, 66);
+  background-color: #ACCBE1;
+  border-radius: 20px;
+}
+
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#btnDiv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+  width: 90%;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  padding: 9px 0px;
+  border: none;
+  color: #536B78;
+  font-weight: 700;
+  border-radius: 09px;
+  border: #637081bc 1px solid;
+  background-color: #CEE5F2;
+  transition: all 0.3s ease, transform 0.3s ease;
+}
+.btn:hover{
+  background-color: #637081;
+  color: #CEE5F2;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+#ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 equal columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+}
+#interest{
+  text-decoration: underline gray;
+}

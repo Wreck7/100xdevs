@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
+const cors = require("cors");
+
+app.use(cors())
+app.use(express.json());
 
 const { userSchema } = require('./types')
 const { User } = require('./db')
 
-app.use(express.json());
 
 // function validate(req,res,next) {
 //     userSchema.safeParse

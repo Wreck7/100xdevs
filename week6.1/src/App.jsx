@@ -5,18 +5,18 @@ import Header from './compo/Header'
 function App() {
   const [title, setTitle] = useState('karthik')
   function updateTitle() {
-    setTitle(Math.random());
+    setTitle(Math.random()*100);
   }
   return (
     <div>
     <button onClick={updateTitle}>update 1st title</button>
       <Header title={title}/>
-      <Header title="karthik"/>
-      <Header title="karthik"/>
-      <Header title="karthik"/>
-      <Header title="karthik"/>
-      <Header title="karthik"/>
-      <Header title="karthik"/>
+      <Header title="sowmya"/>
+      <Header title="sowmya"/>
+      <Header title="sowmya"/>
+      <Header title="sowmya"/>
+      <Header title="sowmya"/>
+      <Header title="sowmya"/>
     </div>
   )
 }

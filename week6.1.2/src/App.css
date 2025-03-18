@@ -1,0 +1,10 @@
+#wrapper {
+  color: aqua;
+  background-color: rgb(91, 89, 89);
+  border: 2px solid black;
+  padding: 20px;
+}
+
+#text {
+  background-color: blue;
+}

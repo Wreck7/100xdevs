@@ -39,7 +39,6 @@ router.post('/signin', async function (req, res) {
         res.status(400).json({ message: 'admin does not exist please sign up first!' });
     } else {
         const token = jwt.sign({ username: username, password: password }, jwtPass)
-        // const admin = await Admin.updateOne({username: username}, {token: token});
         res.json({ message: 'admin signed in successfully', token: token });
     }
 })
@@ -59,5 +58,4 @@ router.get('/courses', adminMiddleware, async function (req, res) {
     res.json({ courses: response });
 })
 
-// router.get()
 module.exports = router;

@@ -1,19 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0 + 1)
+  const [exchange, setExchange] = useState({})
+  const [bank, setBank] = useState({})
   useEffect(() => {
     setTimeout(() => {
-      setCount(count);
+      setExchange({returns: 100});
     }, 1000);
   }, [])
-  
+  useEffect(() => {
+    setTimeout(() => {
+      setBank({amount: 100});
+    }, 1000);
+  }, [])
+  const incomeTax = (exchange.returns + bank.amount) * 0.2;
   return (
     <div>
-      {count}
+      your tax is {incomeTax}
     </div>
   )
 }

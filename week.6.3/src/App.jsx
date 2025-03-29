@@ -1,5 +1,6 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import './App.css'
+import { CallComp } from './compo/CallComp'
 
 function App() {
   const [exchange1, setExchange1] = useState({})
@@ -20,16 +21,15 @@ function App() {
     }, 1000);
   }, [])
 
-  const exchanges = useMemo(() => {
+  const exchanges = useCallback(() => {
     console.log("calculating")
     return exchange1.returns + exchange2.returns
   }, [exchange1, exchange2])
 
-  const incomeTax = (exchanges + bank.amount) * 0.2;
 
   return (
     <div>
-      your income tax is {incomeTax}
+      <CallComp exchanges={exchanges}/>
     </div>
   )
 }

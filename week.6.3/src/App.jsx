@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import './App.css'
 import { CallComp } from './compo/CallComp'
 
@@ -6,6 +6,7 @@ function App() {
   const [exchange1, setExchange1] = useState({})
   const [exchange2, setExchange2] = useState({})
   const [bank, setBank] = useState({})
+  const divRef = useRef();
 
   useEffect(() => {
     setExchange1({ returns: 100 });
@@ -28,7 +29,7 @@ function App() {
 
 
   return (
-    <div>
+    <div ref={divRef} onClick={() => divRef.current.style.color = 'green'}>
       <CallComp exchanges={exchanges}/>
     </div>
   )

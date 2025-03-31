@@ -5,6 +5,7 @@ import { Assign2 } from './compo/Assign2'
 import { Assign3 } from './compo/Assign3'
 import { Assign4 } from './compo/Assign4'
 import { Assign5 } from './compo/Assign5'
+import { Assign6 } from './compo/Assign6'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       {/* <Assign3 /> */}
       <Assign4 />
       <Assign5 />
+      <Assign6 />
     </div>
   )
 }

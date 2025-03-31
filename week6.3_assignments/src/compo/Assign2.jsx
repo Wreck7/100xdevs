@@ -20,7 +20,6 @@ export function Assign2() {
     const [sentences, setSentences] = useState(ALL_WORDS);
     const [filter, setFilter] = useState("");
 
-    // const filteredSentences = sentences.filter(x => x.includes(filter))
     const filteredSentences = useMemo(() => {
         return sentences.filter(x =>
           x.toLowerCase().includes(filter.toLowerCase())

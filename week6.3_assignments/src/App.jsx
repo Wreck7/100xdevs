@@ -12,13 +12,13 @@ function App() {
 
   return (
     <div>
-      {/* <Assign1 />
-      <Assign2 />
-      <Assign3 />
-      <Assign4 />
-      <Assign5 />
-      <Assign6 /> */}
-      <Assign7 />
+      {/* <Assign1 /> */}
+      {/* <Assign2 /> */}
+      {/* <Assign3 /> */}
+      {/* <Assign4 /> */}
+      {/* <Assign5 /> */}
+      {/* <Assign6 /> */}
+      {/* <Assign7 /> */}
     </div>
   )
 }

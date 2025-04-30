@@ -23,9 +23,11 @@ export function Assign4() {
     );
 };
 
+// const CounterButtons = ({ onIncrement, onDecrement }) => (
+    // uncomment his to see a significant diff
 const CounterButtons = memo(({ onIncrement, onDecrement }) => (
     <div>
-        <button onClick={onIncrement}>Increment</button>
         <button onClick={onDecrement}>Decrement</button>
+        <button onClick={onIncrement}>Increment</button>
     </div>
 ));

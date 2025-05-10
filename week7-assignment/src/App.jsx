@@ -1,6 +1,7 @@
 import { RecoilRoot } from 'recoil'
 import SectionMain from './components/SectionMain'
 import './App.css'
+import ShowTodos from './components/ShowTodos'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div>
       <RecoilRoot>
         <SectionMain />
+        <ShowTodos />
       </RecoilRoot>
     </div>
   )

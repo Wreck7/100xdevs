@@ -2,7 +2,7 @@ import { RecoilRoot } from 'recoil'
 import SectionMain from './components/SectionMain'
 import './App.css'
 import ShowTodos from './components/ShowTodos'
-import Search from './components/Search'
+import SearchFeature from './components/SearchFeature'
 
 function App() {
 
@@ -10,8 +10,9 @@ function App() {
     <div>
       <RecoilRoot>
         <SectionMain />
-        <Search />
-        <ShowTodos />
+        <br />
+        <SearchFeature />
+        {/* <ShowTodos /> */}
       </RecoilRoot>
     </div>
   )

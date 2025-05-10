@@ -2,8 +2,7 @@ import React from 'react'
 import { searchQueryState, searchFilteredTodosSelector } from '../store/todosSpace';
 import { useRecoilValue, useRecoilState } from 'recoil';
 
-const Search = () => {
-    const SearchTodoList = () => {
+const SearchFeature = () => {
         const filteredTodos = useRecoilValue(searchFilteredTodosSelector);
         const [query, setQuery] = useRecoilState(searchQueryState);
 
@@ -26,7 +25,6 @@ const Search = () => {
             </div>
         );
     };
-}
 
 
-export default Search
+export default SearchFeature

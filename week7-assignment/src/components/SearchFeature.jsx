@@ -1,12 +1,22 @@
 import React from 'react'
 import { searchQueryState, searchFilteredTodosSelector, todosSpace } from '../store/todosSpace';
 import { useRecoilValue, useRecoilState } from 'recoil';
+// import { useState, useEffect } from 'react';
 
 const SearchFeature = () => {
     const filteredTodos = useRecoilValue(searchFilteredTodosSelector);
     const [query, setQuery] = useRecoilState(searchQueryState);
     const [todos, setTodos] = useRecoilState(todosSpace);
     // const [filteredTodos, setFilteredTodos] = useRecoilState(searchFilteredTodosSelector)
+
+    // const [inputValue, setInputValue] = useState(query); // local input state
+
+    // useEffect(() => {
+    //     const timeout = setTimeout(() => {
+    //         setQuery(inputValue);
+    //     }, 3000); // debounce time in ms
+    //     return () => clearTimeout(timeout); // clean up
+    // }, [inputValue, setQuery]);
 
     const toggleTodoDone = (id) => {
         setTodos(todos.map(todo =>

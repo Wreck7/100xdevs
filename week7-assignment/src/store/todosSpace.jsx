@@ -1,10 +1,24 @@
 import { atom } from "recoil"
 import { selector } from "recoil";
 
+const LOCAL_STORAGE_KEY = 'todos';
+
+// export const todosSpace = atom({
+//     key: 'todosSpace',
+//     default: []
+// })
+
 export const todosSpace = atom({
     key: 'todosSpace',
-    default: []
-})
+    default: JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [],
+    effects_UNSTABLE: [
+        ({ onSet }) => {
+            onSet(newTodos => {
+                localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTodos));
+            });
+        },
+    ],
+});
 
 export const searchQueryState = atom({
     key: 'searchQueryState',

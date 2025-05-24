@@ -1,6 +1,6 @@
 
 import './App.css'
-import { useRecoilValue,RecoilRoot } from 'recoil'
+import { useRecoilValue,RecoilRoot, useRecoilState } from 'recoil'
 import { jobsAtom, messagingAtom, networkAtom, notificationAtom } from './store'
 
 function App() {
@@ -18,7 +18,7 @@ function MainApp() {
   const networkCount = useRecoilValue(networkAtom)
   const jobsCount = useRecoilValue(jobsAtom)
   const messagingCount = useRecoilValue(messagingAtom)
-  const notificationCount = useRecoilValue(notificationAtom)
+  const [notificationCount, setNotificationCount] = useRecoilState(notificationAtom)
   return (
     <div>
       <button>home</button>
@@ -28,7 +28,7 @@ function MainApp() {
       <button>messaging({messagingCount >= 100 ? '99+' : messagingCount})</button>
       <button>notification({notificationCount >= 100 ? '99+' : notificationCount})</button>
 
-      <button>me</button>
+      <button onClick={() => setNotificationCount(c => c+1)}>me ({})</button>
     </div>
   )
 }

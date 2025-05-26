@@ -19,12 +19,12 @@ function App() {
 function MainApp(){
   const [notificationsCount, setNotificationsCount] = useRecoilState(notifications)
   const allNotificationsCount = useRecoilValue(totalNotifications)
-  useEffect(() => {
-    axios.get('http://localhost:3000/notifications')
-    .then(res => {
-      setNotificationsCount(res.data)
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios.get('http://localhost:3000/notifications')
+  //   .then(res => {
+  //     setNotificationsCount(res.data)
+  //   })
+  // }, [])
   
   return(
     <div>

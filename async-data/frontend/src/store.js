@@ -1,13 +1,22 @@
+import axios from 'axios';
 import {atom, selector} from 'recoil';
 
 export const notifications = atom({
     key: 'notifications',
-    default:{
-        network: 5,
-        jobs: 3,
-        messaging: 2,
-        notifications: 11
-    }
+    default: selector({
+        key: 'notificationsAtomSelector',
+        get: async () =>{
+            // await new Promise(r=> setTimeout(r,3000))  // uncomment this line to simulate a delay to see what renders first
+            const res = await axios.get('http://localhost:3000/notifications')
+            return res.data;
+        }
+    })
+    // default:{
+    //     network: 5,
+    //     jobs: 3,
+    //     messaging: 2,
+    //     notifications: 11
+    // }
 })
 
 export const totalNotifications = selector({

@@ -39,6 +39,7 @@ const SearchFeature = () => {
                         <p>{todo.description}</p>
                         <button onClick={() => toggleTodoDone(todo.id)}
                         >{todo.done ? "Done" : "Undone"}</button>
+                        <button onClick={}>delete</button>
                     </div>
                 ))}
             </div>

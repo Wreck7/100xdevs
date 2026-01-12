@@ -1,4 +1,5 @@
 import { Assign1 } from "./components/Assign1"
+import { BasicProjectScreen } from "./components/BasicProjectScreen"
 import { Flex } from "./components/Flex"
 import InputCode from "./components/InputCode"
 import { Screen1 } from "./components/Screen1"
@@ -10,7 +11,8 @@ function App() {
       {/* <Flex /> */}
       {/* <Assign1 /> */}
       {/* <Screen1 /> */}
-      <InputCode length={6} onComplete={true} />
+      {/* <InputCode length={6} onComplete={true} /> */}
+      <BasicProjectScreen />
     </div>
   )
 }

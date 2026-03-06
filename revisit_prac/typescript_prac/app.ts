@@ -63,3 +63,14 @@ function identity<T>(value: T): T {
 
 identity<number>(10)
 identity<string>("hello")
+
+
+
+// Enums - Define a set of named constants.
+enum Role {
+  ADMIN,
+  USER,
+  GUEST
+}
+
+let role: Role = Role.ADMIN

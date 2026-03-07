@@ -74,3 +74,12 @@ enum Role {
 }
 
 let role: Role = Role.ADMIN
+
+
+
+let value: any = 10
+
+value = "hello"
+value = true
+
+value.toUpperCase() // no error
